@@ -1,0 +1,8 @@
+<ul id="pages">
+<% pages.each do |page| -%>
+  <li id="page_<%= page.id %>">
+    <%= link_to_page page %>
+  </li>
+<% end -%>
+</ul>
+

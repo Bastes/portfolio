@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :sections
-
   map.resources :documents
+  map.resources :pages
   map.resources :pictures
+  map.resources :sections do |sections|
+    sections.resources :pages, :name_prefix => "section_"
+  end
   map.resources :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.

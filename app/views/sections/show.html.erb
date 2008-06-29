@@ -7,3 +7,19 @@
 
 <pre><%= @section.description %></pre>
 
+<fieldset>
+  <legend>Pages</legend>
+  
+  <div id="pages_box">
+    <%= render_partial 'pages/pages', @section.pages %>
+    
+    <% admin_area do -%>
+    <%= sortable_element('pages', :url => {:controller => :pages, :action => :update_ranks, :section_id => @section.id}) %>
+    
+    <%= link_to "new page", new_section_page_path(@section) %>
+    <% end -%>
+  </div>
+</fieldset>
+
+<%= render 'pages/show' if @page %>
+

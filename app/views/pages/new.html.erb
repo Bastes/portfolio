@@ -1,0 +1,25 @@
+<% title 'New page' -%>
+
+<%= link_to 'back', @page.section %>
+
+<% form_for(@page) do |f| %>
+  <%= f.hidden_field :section_id %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :subtitle %><br />
+    <%= f.text_field :subtitle %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
