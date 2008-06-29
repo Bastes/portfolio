@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_filter :authorize
+  
   # GET /pictures
   def index
     @pictures = Picture.find(:all)

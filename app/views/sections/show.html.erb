@@ -1,0 +1,9 @@
+<% title @section.title %>
+
+<% admin_area do -%>
+<%= link_to 'edit', edit_section_path(@section) %>
+<%= link_to 'delete', @section, :confirm => 'Are you sure ?', :method => :delete %>
+<% end -%>
+
+<pre><%= @section.description %></pre>
+

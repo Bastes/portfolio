@@ -15,6 +15,7 @@
       <h1><%= yield(:title) || 'Default title' %></h1>
       
       <ul id="menu">
+        <li<% if ['sections', 'pages'].include? params[:controller] %> class="current"<% end %>><%= link_to "Portfolio", sections_path %></li>
       </ul>
       
       <% if ['sections', 'pages'].include? params[:controller] -%>

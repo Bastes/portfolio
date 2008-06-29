@@ -1,0 +1,17 @@
+<% title 'Editing section' -%>
+
+<%= link_to 'show', @section %> |
+<%= link_to 'delete', @section, :confirm => 'Are you sure ?', :method => :delete %>
+
+<% form_for(@section) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  
+  <%= f.submit "Update" %>
+<% end %>
+

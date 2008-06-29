@@ -1,0 +1,13 @@
+<ul id="sections">
+<% sections.each do |section| -%>
+  <li id="section_<%= section.id %>"<% if section == current_section %> class="current"<% end %>>
+    <%= link_to section.title, section %>
+  </li>
+<% end -%>
+</ul>
+
+<% admin_area do -%>
+<%= sortable_element('sections', :url => {:controller => :sections, :action => :update_ranks}) %>
+<%= link_to 'new', new_section_path %>
+<% end -%>
+

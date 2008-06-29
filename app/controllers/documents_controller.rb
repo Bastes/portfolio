@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+  before_filter :authorize
+  
   # GET /documents
   def index
     @documents = Document.find(:all)

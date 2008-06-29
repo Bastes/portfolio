@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
 
   # sections list, ordered by rank
   def sections
-    @sections ||= Section.find :all, :order => 'rank ASC'
+    @sections ||= Section.ordered
   end
   
   # current section, if any
