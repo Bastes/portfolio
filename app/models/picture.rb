@@ -1,4 +1,8 @@
 class Picture < ActiveRecord::Base
+  # link to pages
+  has_many :embedded_pictures, :dependent => :destroy
+  has_many :pages, :through => :embedded_pictures
+  
   # paperclip attachment
   has_attached_file :attachment,
                     :styles => { :thumb  => THUMB_FORMAT,

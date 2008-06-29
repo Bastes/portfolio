@@ -1,0 +1,2 @@
+module EmbeddedDocumentsHelper
+end

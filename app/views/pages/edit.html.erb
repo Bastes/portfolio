@@ -27,3 +27,21 @@
   <% end %>
 </fieldset>
 
+<fieldset>
+  <legend>Documents</legend>
+
+  <%= render 'embedded_documents/index' %>
+  
+  <%= link_to "add (new)", new_page_document_path(@page) %>
+  
+  <fieldset>
+    <legend>
+      <%= link_to_remote "add (in stock)",
+          :url => new_page_embedded_document_path(@page),
+          :method => :get,
+          :update => "embeddable_documents_box" %>
+    </legend>
+    <div id="embeddable_documents_box"></div>
+  </fieldset>
+</fieldset>
+

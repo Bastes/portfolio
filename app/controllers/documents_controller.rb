@@ -40,7 +40,17 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       if @document.save
         flash[:notice] = 'Document was successfully created.'
-        format.html { redirect_to( documents_url ) }
+        if params[:page_id]
+          embedded = EmbeddedDocument.new(:page_id => params[:page_id], :document_id => @document.id)
+          if embedded.save
+            flash[:notice] += "\nDocument was successfully embedded in page."
+            format.html { redirect_to edit_page_path(params[:page_id]) }
+          else
+            redirect_to (page_path(params[:page_id]))
+          end
+        else
+          format.html { redirect_to( documents_url ) }
+        end
       else
         format.html { render :action => "new" }
       end

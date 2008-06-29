@@ -1,0 +1,2 @@
+module EmbeddedPicturesHelper
+end

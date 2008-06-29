@@ -1,0 +1,12 @@
+<ul>
+<% @documents.each do |document| -%>
+  <li id="embeddable_document_<%= document.id %>">
+    <% remote_form_for EmbeddedDocument.new(:page_id => @page.id, :document_id => document.id) do |f| %>
+      <%= f.hidden_field :page_id %>
+      <%= f.hidden_field :document_id %>
+      <%= link_to_document document %>
+      <%= f.submit 'add', :style => 'display: inline; border: none; background-color: transparent; padding: 0px; margin: 0px; float: none; clear: none;' %>
+    <% end -%>
+<% end -%>
+</ul>
+

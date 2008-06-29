@@ -1,0 +1,24 @@
+<h1>Listing embedded_pictures</h1>
+
+<table>
+  <tr>
+    <th>Page</th>
+    <th>Page</th>
+    <th>Rank</th>
+  </tr>
+
+<% for embedded_pictures in @embedded_pictures %>
+  <tr>
+    <td><%=h embedded_pictures.page_id %></td>
+    <td><%=h embedded_pictures.page_id %></td>
+    <td><%=h embedded_pictures.rank %></td>
+    <td><%= link_to 'Show', embedded_pictures %></td>
+    <td><%= link_to 'Edit', edit_embedded_pictures_path(embedded_pictures) %></td>
+    <td><%= link_to 'Destroy', embedded_pictures, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New embedded_pictures', new_embedded_pictures_path %>

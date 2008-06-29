@@ -1,0 +1,2 @@
+page.remove "embedded_document_#{@embedded_document.id}"
+

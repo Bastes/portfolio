@@ -1,0 +1,15 @@
+<ul id="embedded_documents">
+<% embedded_documents.each do |embedded_document| -%>
+  <li id="embedded_document_<%= embedded_document.id %>">
+    <%= link_to_document embedded_document.document %>
+    <% admin_area do -%>
+    <%= link_to_remote "remove", :url => embedded_document_path(embedded_document), :method => :delete %>
+    <% end -%>
+  </li>
+<% end -%>
+</ul>
+<% admin_area do -%>
+<%= sortable_element(
+      'embedded_documents',
+      :url => {:controller => :embedded_documents, :action => :update_ranks, :page_id => @page.id}) %>
+<% end -%>
