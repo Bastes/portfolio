@@ -1,0 +1,14 @@
+<% title 'New picture' -%>
+
+<%= link_to "back", (params[:page_id] ? edit_page_path(params[:page_id]) : pictures_path) %>
+
+<% form_for(@picture, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <label for="picture_attachment">File</label>
+  <%= f.file_field :attachment %>
+  <%= error_message_on @picture, :attachment %>
+  
+  <%= f.submit "Create" %>
+<% end %>
+

@@ -1,0 +1,14 @@
+<% title 'New document' -%>
+
+<%= link_to "back", (params[:page_id] ? edit_page_path(params[:page_id]) : documents_path) %>
+
+<% form_for(@document, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+  
+  <label for="document_attachment">File</label>
+  <%= f.file_field :attachment %>
+  <%= error_message_on @document, :attachment %>
+  
+  <%= f.submit "Create" %>
+<% end %>
+

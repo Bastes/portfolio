@@ -1,0 +1,19 @@
+<% title 'Pictures' -%>
+
+<ul id="pictures">
+<% @pictures.each do |picture| -%>
+  <li id="picture_<%= picture.id %>">
+    <%= link_to_picture(picture, :thumb) %>
+    <% admin_area do -%>
+      <%= link_to 'edit', edit_picture_path(picture) %>
+      <%= link_to 'delete',
+                  picture_path(picture),
+                  :confirm => 'Are you sure ?',
+                  :method => :delete %>
+    <% end -%>
+  </li>
+<% end -%>
+</ul>
+
+<%= link_to "new", new_picture_path %>
+

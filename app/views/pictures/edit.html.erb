@@ -1,0 +1,16 @@
+<% title 'Editing picture' -%>
+
+<%= link_to 'back', pictures_path %><br />
+
+<%= link_to_picture(@picture) %>
+
+<% form_for(@picture, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <label for="picture_attachment">File</label>
+  <%= f.file_field :attachment %>
+  <%= error_message_on @picture, :attachment %>
+  
+  <%= f.submit "Update" %>
+<% end %>
+

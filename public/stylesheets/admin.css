@@ -1,0 +1,34 @@
+/******************************************************************************
+ * Admin menu
+ ******************************************************************************/
+#admin_menu {
+  position: absolute;
+  top: 98px;
+  right: -174px;
+  width: 156px;
+  padding: 2px;
+  margin: 0px;
+  border: solid 2px #777;
+  text-align: center;
+  list-style-type: none;
+}
+
+#admin_menu li {
+  padding: 3px;
+  background-color: #777;
+  color: #fff;
+}
+
+#admin_menu li.current {
+  background-color: #fff;
+  color: #777;
+}
+
+#admin_menu li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+form img {
+  float: left;
+}

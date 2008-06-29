@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title><%= yield(:title) || 'Default title' %></title>
+  	<%= javascript_include_tag :defaults %>
+		<%= stylesheet_link_tag 'application' %>
+		
+    <% admin_area do -%>
+		<%= stylesheet_link_tag 'admin' %>
+	  <% end -%>
+	  
+		<%= yield :stylesheets %>
+  </head>
+  <body>
+    <div id="whole_page">
+      <h1><%= yield(:title) || 'Default title' %></h1>
+      
+      <ul id="menu">
+      </ul>
+      
+      <% if ['sections', 'pages'].include? params[:controller] -%>
+      <div id="submenu">
+        <%= render_partial 'sections/sections', sections %>
+      </div>
+      <% end -%>
+      
+      <% admin_area do -%>
+      <ul id="admin_menu">
+        <li>Administration</li>
+        <li<% if params[:controller] == 'documents' %> class="current"<% end %>><%= link_to "Documents", documents_path %></li>
+        <li<% if params[:controller] == 'pictures' %> class="current"<% end %>><%= link_to "Pictures", pictures_path %></li>
+      </ul>
+      <% end -%>
+      
+      <div id="connexion">
+      <% if logged? -%>
+        Logged in as <% if admin? -%>administrator<% else -%>visitor<% end -%><br />
+        <%= link_to "log out", logout_path %>
+      <% else -%>
+        <%= link_to "log in", login_path %>
+      <% end -%>
+      </div>
+      
+      <% if flash[:error] -%>
+      <div id="error"><%= flash[:error] %></div>
+      <% end -%>
+      
+      <% if flash[:warning] -%>
+      <div id="warning"><%= flash[:warning] %></div>
+      <% end -%>
+      
+      <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+      
+      <div id="content"><%= yield %></div>
+    </div>
+  </body>
+</html>

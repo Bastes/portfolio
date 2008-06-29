@@ -1,0 +1,22 @@
+<% title 'Documents' -%>
+
+<ul id="documents">
+<% @documents.each do |document| %>
+  <li id="document_<%= document.id %>">
+    <% presentation = "#{document.attachment_file_name} - #{'%.2f' % (document.attachment_file_size.to_f / 1.megabytes)} Mo" %>
+    <%= link_to presentation,
+                document.attachment.url,
+                :target => '_blank',
+                :title => presentation %>
+    <% admin_area do -%>
+      <%= link_to 'edit', edit_document_path(document) %>
+      <%= link_to 'delete',
+                  document_path(document),
+                  :confirm => 'Are you sure ?',
+                  :method => :delete %>
+    <% end -%>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to 'new', new_document_path %>

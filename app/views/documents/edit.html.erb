@@ -1,0 +1,16 @@
+<% title 'Editing document' -%>
+
+<%= link_to 'back', documents_path %><br />
+
+<%= link_to_document @document %>
+
+<% form_for(@document, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <label for="document_attachment">File</label>
+  <%= f.file_field :attachment %>
+  <%= error_message_on @document, :attachment %>
+  
+  <%= f.submit "Update" %>
+<% end %>
+

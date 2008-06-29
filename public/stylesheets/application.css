@@ -1,0 +1,208 @@
+body {
+  font-family: Verdana;
+}
+
+a {
+  color: inherit;
+}
+
+#whole_page {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin-left: -312px;
+  width: 600px;
+  padding: 10px;
+  border: solid 2px #777;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+
+/******************************************************************************
+ * Flash divs
+ ******************************************************************************/
+ 
+#notice,
+#warning,
+#error {
+  margin: 10px 0px;
+  padding: 5px;
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
+  font-weight: bold;
+}
+
+#notice {
+  background-color: #efe;
+  border-color: #070;
+  color: #070;
+}
+
+#warning {
+  background-color: #ffe;
+  border-color: #770;
+  color: #770;
+}
+
+#error {
+  background-color: #fee;
+  border-color: #700;
+  color: #700;
+}
+
+/******************************************************************************
+ * Connection div
+ ******************************************************************************/
+#connexion {
+  position: absolute;
+  top: -2px;
+  right: -174px;
+  width: 150px;
+  padding: 5px;
+  text-align: center;
+  border: solid 2px #777;
+}
+
+/******************************************************************************
+ * Menu
+ ******************************************************************************/
+#menu {
+  position: absolute;
+  top: -2px;
+  left: -174px;
+  width: 156px;
+  padding: 2px;
+  margin: 0px;
+  border: solid 2px #777;
+  text-align: center;
+  list-style-type: none;
+}
+
+#menu li {
+  padding: 3px;
+  background-color: #777;
+  color: #fff;
+}
+
+#menu li.current {
+  background-color: #fff;
+  color: #777;
+}
+
+#menu li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/******************************************************************************
+ * Sections sub_menu
+ ******************************************************************************/
+#submenu {
+  position: absolute;
+  top: 98px;
+  left: -174px;
+  width: 156px;
+  padding: 2px;
+  margin: 0px;
+  border: solid 2px #777;
+  text-align: center;
+}
+
+#submenu #sections {
+  list-style-type: none;
+}
+
+#submenu li {
+  padding: 3px;
+  background-color: #777;
+  color: #fff;
+}
+
+#submenu li.current {
+  background-color: #fff;
+  color: #777;
+}
+
+#submenu li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/******************************************************************************
+ * Standard form inputs
+ ******************************************************************************/
+label,
+input[type=submit] {
+  margin-top: 10px;
+}
+
+label,
+label + *,
+input[type=submit],
+form p {
+  clear: left;
+}
+
+form p {
+  margin: 0px;
+  padding: 0px;
+}
+
+label,
+input,
+select,
+textarea,
+form p {
+  float: left
+}
+
+input,
+select,
+textarea {
+  border-color: #777;
+}
+
+.fieldWithErrors input,
+.fieldWithErrors select,
+.fieldWithErrors textarea {
+  border-color: #f00;
+}
+
+.formError {
+  display: block;
+  float: left;
+  color: #b00;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/******************************************************************************
+ * Fieldsets
+ ******************************************************************************/
+fieldset {
+  border: 1px solid #777;
+}
+
+legend {
+  color: #777;
+  font-size: 12px;
+}
+
+/******************************************************************************
+ * Listes
+ ******************************************************************************/
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
