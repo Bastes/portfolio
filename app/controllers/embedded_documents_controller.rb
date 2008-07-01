@@ -37,8 +37,8 @@ class EmbeddedDocumentsController < ApplicationController
         format.html { render :action => :index }
         format.xml  { render :xml => @embedded_document, :status => :created, :location => @embedded_document }
       else
-        format.html { render :action => "new" }
         format.js
+        format.html { render :action => "new" }
         format.xml  { render :xml => @embedded_document.errors, :status => :unprocessable_entity }
       end
     end

@@ -1,2 +1,4 @@
 page.remove "embeddable_document_#{@embedded_document.document_id}"
-page.replace_html :embedded_documents, :partial => 'embedded_documents', :object => @page.embedded_documents
+page.replace :embedded_documents,
+             :partial => 'embedded_documents',
+             :object => @page.embedded_documents

@@ -1,0 +1,15 @@
+<ul id="embedded_pictures">
+<% embedded_pictures.each do |embedded_picture| -%>
+  <li id="embedded_picture_<%= embedded_picture.id %>">
+    <%= link_to_picture embedded_picture.picture %>
+    <% admin_area do -%>
+    <%= link_to_remote "remove", :url => embedded_picture_path(embedded_picture), :method => :delete %>
+    <% end -%>
+  </li>
+<% end -%>
+</ul>
+<% admin_area do -%>
+<%= sortable_element(
+      'embedded_pictures',
+      :url => {:controller => :embedded_pictures, :action => :update_ranks, :page_id => @page.id}) %>
+<% end -%>

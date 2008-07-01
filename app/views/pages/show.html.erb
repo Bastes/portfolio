@@ -10,6 +10,11 @@
 <pre><%= @page.description %></pre>
 
 <fieldset>
+  <legend>Pictures</legend>
+  <%= render 'embedded_pictures/index' %>
+</fieldset>
+
+<fieldset>
   <legend>Documents</legend>
   <%= render 'embedded_documents/index' %>
 </fieldset>

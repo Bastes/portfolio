@@ -1,0 +1,2 @@
+page.remove "embedded_picture_#{@embedded_picture.id}"
+

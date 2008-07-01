@@ -28,6 +28,24 @@
 </fieldset>
 
 <fieldset>
+  <legend>Pictures</legend>
+
+  <%= render 'embedded_pictures/index' %>
+  
+  <%= link_to "add (new)", new_page_picture_path(@page) %>
+  
+  <fieldset>
+    <legend>
+      <%= link_to_remote "add (in stock)",
+          :url => new_page_embedded_picture_path(@page),
+          :method => :get,
+          :update => "embeddable_pictures_box" %>
+    </legend>
+    <div id="embeddable_pictures_box"></div>
+  </fieldset>
+</fieldset>
+
+<fieldset>
   <legend>Documents</legend>
 
   <%= render 'embedded_documents/index' %>

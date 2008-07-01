@@ -1,0 +1,4 @@
+page.remove "embeddable_picture_#{@embedded_picture.picture_id}"
+page.replace :embedded_pictures,
+             :partial => 'embedded_pictures',
+             :object => @page.embedded_pictures

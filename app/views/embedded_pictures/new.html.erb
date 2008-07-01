@@ -1,23 +1,12 @@
-<h1>New embedded_pictures</h1>
+<ul>
+<% @pictures.each do |picture| -%>
+  <li id="embeddable_picture_<%= picture.id %>">
+    <% remote_form_for EmbeddedPicture.new(:page_id => @page.id, :picture_id => picture.id) do |f| %>
+      <%= f.hidden_field :page_id %>
+      <%= f.hidden_field :picture_id %>
+      <%= link_to_picture picture %>
+      <%= f.submit 'add', :style => 'display: inline; border: none; background-color: transparent; padding: 0px; margin: 0px; float: none; clear: none;' %>
+    <% end -%>
+<% end -%>
+</ul>
 
-<% form_for(@embedded_pictures) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :page_id %><br />
-    <%= f.text_field :page_id %>
-  </p>
-  <p>
-    <%= f.label :page_id %><br />
-    <%= f.text_field :page_id %>
-  </p>
-  <p>
-    <%= f.label :rank %><br />
-    <%= f.text_field :rank %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', embedded_pictures_path %>
