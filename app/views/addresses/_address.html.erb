@@ -1,0 +1,10 @@
+<% label = address.label.blank? ? address.url : address.label -%>
+<%= link_to(address.banner.exists? ?
+            image_tag(address.banner.url, :title => label ) :
+            label, 'http://' + address.url, :title => label ) %>
+
+<% admin_area do %>
+<%= link_to "edit", edit_address_path(address) %>
+<%= link_to "delete", address_path(address), :confirm => "Are you sure ?", :method => :delete %>
+<% end -%>
+

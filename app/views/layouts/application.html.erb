@@ -16,6 +16,7 @@
       
       <ul id="menu">
         <li<% if ['sections', 'pages'].include? params[:controller] %> class="current"<% end %>><%= link_to "Portfolio", pages_path %></li>
+        <li<% if ['address_books', 'addresses'].include? params[:controller] %> class="current"<% end %>><%= link_to "Addresses", address_books_path %></li>
       </ul>
       
       <% if ['sections', 'pages'].include? params[:controller] -%>

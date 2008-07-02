@@ -8,3 +8,5 @@ NEWER_PAGES_LIMIT = 10
 THUMB_FORMAT  = ['100x100#', :png]
 SCALED_FORMAT = ['200x>', :png]
 
+# link banner's format geometry
+BANNER_GEOMETRY = ['400x>', :png]

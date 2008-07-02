@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   # To protect users, before_filter :authorize, :except => :public_action
   def authorize
     unless admin?
-      flash[:error] = "Accès refusé"
+      flash[:error] = "Access denied"
       redirect_to home_path
       false
     end

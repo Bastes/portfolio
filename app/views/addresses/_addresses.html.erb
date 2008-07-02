@@ -1,0 +1,6 @@
+<% addresses.each do |address| -%>
+  <li id="address_<%= address.id %>">
+    <%= render_partial 'addresses/address', address %>
+  </li>
+<% end -%>
+

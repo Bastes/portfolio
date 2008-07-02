@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :addresses
+  map.resources :address_books do |address_books|
+    address_books.resources :addresses, :name_prefix => "address_book_"
+  end
   map.resources :documents
   map.resources :embedded_pictures
   map.resources :embedded_documents

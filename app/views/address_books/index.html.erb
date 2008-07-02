@@ -1,0 +1,35 @@
+<% title 'Addresses' -%>
+
+<ul id="address_books">
+<% @address_books.each do |address_book| -%>
+  <li id="address_book_<%= address_book.id %>">
+    <fieldset>
+      <legend>
+        <%=h address_book.label %>
+        
+        <% admin_area do %>
+        <%= link_to "edit", edit_address_book_path(address_book) %>
+        <%= link_to "delete", address_book_path(address_book), :confirm => "Are you sure ?", :method => :delete %>
+        <% end -%>
+      </legend>
+      
+      <pre><%=h address_book.description %></pre>
+      
+      <ul id="address_book_addresses_<%= address_book.id %>">
+        <%= render_partial 'addresses/addresses', address_book.addresses %>
+      </ul>
+      
+      <% admin_area do -%>
+      <%= sortable_element("address_book_addresses_#{address_book.id}", :url => {:controller => :addresses, :action => :update_ranks, :address_book_id => address_book.id}) %>
+      <%= link_to 'new', new_address_book_address_path(address_book) %>
+      <% end -%>
+      
+    </fieldset>
+  </li>
+<% end -%>
+</ul>
+
+<% admin_area do -%>
+<%= sortable_element('address_books', :url => {:controller => :address_books, :action => :update_ranks}) %>
+<%= link_to "new", new_address_book_path %>
+<% end -%>

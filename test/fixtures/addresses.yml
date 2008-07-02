@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  address_book_id: 1
+  url: MyString
+  title: MyString
+  rank: 1
+
+two:
+  address_book_id: 1
+  url: MyString
+  title: MyString
+  rank: 1

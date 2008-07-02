@@ -8,14 +8,14 @@ class SessionsController < ApplicationController
   # logs the user in
   def create
     session[:password] = params[:password]
-    flash[:notice] = 'Vous êtes connecté'
+    flash[:notice] = 'Logged in'
     redirect_to home_url
   end
 
   # logs the user out
   def destroy
     reset_session
-    flash[:notice] = 'Vous avez été déconnecté'
+    flash[:notice] = 'Logged out'
     redirect_to home_url
   end
 
