@@ -58,6 +58,7 @@ ActionController::Routing::Routes.draw do |map|
   map.home '/', :controller => "sessions", :action => 'new'
   map.login 'login', :controller => "sessions", :action => 'new'
   map.logout 'logout', :controller => "sessions", :action => 'destroy'
+  map.portfolio 'portfolio', :controller => "pages", :action => 'index'
   
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
