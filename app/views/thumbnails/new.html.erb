@@ -1,0 +1,64 @@
+<% title 'New thumbnail' -%>
+<% stylesheets do -%>
+  <%= stylesheet_link_tag 'thumbnailing' %>
+<% end -%>
+
+<script language="JavaScript">
+  // confines an integer value into given constraints
+  function confine(value, min, max) {
+    value = parseInt(value)
+    min = parseInt(min)
+    max = parseInt(max)
+    return (value > max ? max : (value < min ? min : value))
+  }
+</script>
+
+<%= link_to "back", @picture %>
+<fieldset>
+  <legend>Current thumbnail</legend>
+  <%= image_tag(@picture.attachment.url(:thumb), :alt => 'Current thumbnail') %>
+</fieldset>
+<fieldset>
+  <legend>Recrop</legend>
+  <div>
+    <% [:scaled, :original].each do |version| -%>
+    <% form_tag({ :action => :create, :picture_id => @picture.id }, { :id => "form_#{version}_image_recrop" }) do -%>
+      <%= hidden_field_tag(:version, version.to_s) %>
+      <% dimensions = @picture.dimensions version -%>
+      <% thumb_dimensions = @picture.dimensions :thumb -%>
+      <div id="resize_<%= version %>" style="
+          background-image: url(<%= @picture.attachment.url version %>);
+          margin-left: -<%= dimensions[:width] / 2 %>px;
+          width: <%= dimensions[:width] %>px;
+          height: <%= dimensions[:height] %>px;">
+        <div class="selection" style="width: <%= thumb_dimensions[:width] %>px; height: <%= thumb_dimensions[:height] %>px;">
+          <div class="border">
+          </div>
+          <%= hidden_field_tag(:left, 0) %>
+          <%= hidden_field_tag(:top, 0) %>
+        </div>
+      </div>
+    <% end -%>
+    <% end -%>
+    
+    <script language="JavaScript">
+      draggables = {}
+      $A(['scaled', 'original']).each(function(type) {
+        draggables[type] = new Draggable($$('#resize_' + type + ' > *').first(), {
+          onEnd: function(element) {
+            selection = element.element
+            selectionFrame = $(selection.parentNode.id)
+            selection.setStyle({
+              left: confine(selection.getStyle('left'), 0, parseInt(selectionFrame.getStyle('width')) - parseInt(selection.getStyle('width'))),
+              top: confine(selection.getStyle('top'), 0, parseInt(selectionFrame.getStyle('height')) - parseInt(selection.getStyle('height')))
+            })
+            inputs = selection.select('input')
+            inputs.first().value = parseInt(selection.getStyle('left'))
+            inputs.last().value = parseInt(selection.getStyle('top'))
+            setTimeout("if (confirm('Recadrer à cet endroit ?')) $('" + selectionFrame.parentNode.id + "').submit()", 1)
+          }
+        } )
+      } )
+    </script>
+  </div>
+</fieldset>
