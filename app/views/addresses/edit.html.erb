@@ -1,22 +1,21 @@
-<% title 'Edit address' -%>
+<% title :edit_something.l_with_args(:something => :address.l).capitalize -%>
 
-<%= link_to "back", address_books_path %>
-<%= link_to "delete", address_path(@address), :confirm => "Are you sure ?", :method => :delete %>
+<%= link_to :back.l, address_books_path %>
+<%= link_to :delete.l, address_path(@address), :confirm => :are_you_sure?.l, :method => :delete %>
 
 <% form_for( @address, :html => { :multipart => true } ) do |f| -%>
-  <%= f.hidden_field :address_book_id %>
   
-  <%= f.label :url %>
+  <%= f.label :url, :url.l.capitalize %>
   <%= f.text_field :url %>
-  <%= error_message_on @address, 'url' %>
+  <%= error_message_on @address_book, :url %>
   
-  <%= f.label :title %>
+  <%= f.label :title, :title.l.capitalize %>
   <%= f.text_field :title %>
   
-  <%= f.label :banner %>
+  <%= f.label :banner, :banner.l.capitalize %>
   <%= f.file_field :banner %>
   <%=  image_tag @address.banner.url if @address.banner.exists? %>
   
-  <%= submit_tag "Update" %>
+  <%= submit_tag :update.l.capitalize %>
 <% end -%>
 

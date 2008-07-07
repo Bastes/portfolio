@@ -1,4 +1,4 @@
-<% title 'New thumbnail' -%>
+<% title :new_something.l_with_args(:something => :thumb).capitalize -%>
 <% stylesheets do -%>
   <%= stylesheet_link_tag 'thumbnailing' %>
 <% end -%>
@@ -13,13 +13,13 @@
   }
 </script>
 
-<%= link_to "back", @picture %>
+<%= link_to :back.l, @picture %>
 <fieldset>
-  <legend>Current thumbnail</legend>
-  <%= image_tag(@picture.attachment.url(:thumb), :alt => 'Current thumbnail') %>
+  <legend><%= :current_thumbnail.l.capitalize %></legend>
+  <%= image_tag(@picture.attachment.url(:thumb), :alt => :urrent_thumbnail.l.capitalize) %>
 </fieldset>
 <fieldset>
-  <legend>Recrop</legend>
+  <legend><%= :recrop.l.capitalize %></legend>
   <div>
     <% [:scaled, :original].each do |version| -%>
     <% form_tag({ :action => :create, :picture_id => @picture.id }, { :id => "form_#{version}_image_recrop" }) do -%>
@@ -55,7 +55,7 @@
             inputs = selection.select('input')
             inputs.first().value = parseInt(selection.getStyle('left'))
             inputs.last().value = parseInt(selection.getStyle('top'))
-            setTimeout("if (confirm('Recadrer à cet endroit ?')) $('" + selectionFrame.parentNode.id + "').submit()", 1)
+            setTimeout("if (confirm(:recrop_here?.l.capitalize)) $('" + selectionFrame.parentNode.id + "').submit()", 1)
           }
         } )
       } )

@@ -1,25 +1,25 @@
-<% title 'New page' -%>
+<% title :new_something.l_with_args(:something => :page.l).capitalize -%>
 
-<%= link_to 'back', @page.section %>
+<%= link_to :back.l, @page.section %>
 
 <% form_for(@page) do |f| %>
   <%= f.hidden_field :section_id %>
-  <%= f.error_messages %>
 
   <p>
-    <%= f.label :title %><br />
+    <%= f.label :title, :title.l.capitalize %><br />
     <%= f.text_field :title %>
+    <%= error_message_on @page, :title %>
   </p>
   <p>
-    <%= f.label :subtitle %><br />
+    <%= f.label :subtitle, :subtitle.l.capitalize %><br />
     <%= f.text_field :subtitle %>
   </p>
   <p>
-    <%= f.label :description %><br />
+    <%= f.label :description, :description.l.capitalize %><br />
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit :create.l.capitalize %>
   </p>
 <% end %>
 

@@ -1,15 +1,15 @@
-<% title 'New address book' -%>
+<% title :new_something.l_with_args(:something => :address_book.l).capitalize -%>
 
-<%= link_to "back", address_books_path %>
+<%= link_to :back.l, address_books_path %>
 
 <% form_for ( @address_book ) do |f| -%>
-  <%= f.label :label %>
+  <%= f.label :label, :label.l.capitalize %>
   <%= f.text_field :label %>
-  <%= error_message_on @address_book, "label" %>
+  <%= error_message_on @address_book, :label %>
   
-  <%= f.label :description %>
+  <%= f.label :description, :description.l.capitalize %>
   <%= f.text_area :description %>
   
-  <%= submit_tag "Create" %>
+  <%= submit_tag :create.l.capitalize %>
 <% end -%>
 

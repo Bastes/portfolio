@@ -1,42 +1,42 @@
-<% title 'Editing page' -%>
+<% title :edit_something.l_with_args(:something => :page.l).capitalize -%>
 
-<%= link_to 'show', @page %>
-<%= link_to 'delete', @page, :confirm => "Are you sure ?", :method => :delete %>
+<%= link_to :show.l, @page %>
+<%= link_to :delete.l, @page, :confirm => :are_you_sure?.l.capitalize, :method => :delete %>
 
 <fieldset>
-  <legend>Page</legend>
+  <legend><%= :page.l.capitalize %></legend>
   <% form_for(@page) do |f| %>
     <%= f.hidden_field :section_id %>
-    <%= f.error_messages %>
-
+    
     <p>
-      <%= f.label :title %><br />
+      <%= f.label :title, :title.l.capitalize %><br />
       <%= f.text_field :title %>
+      <%= error_message_on @page, :title %>
     </p>
     <p>
-      <%= f.label :subtitle %><br />
+      <%= f.label :subtitle, :subtitle.l.capitalize %><br />
       <%= f.text_field :subtitle %>
     </p>
     <p>
-      <%= f.label :description %><br />
+      <%= f.label :description, :description.l.capitalize %><br />
       <%= f.text_area :description %>
     </p>
     <p>
-      <%= f.submit "Update" %>
+      <%= f.submit :update.l.capitalize %>
     </p>
   <% end %>
 </fieldset>
 
 <fieldset>
-  <legend>Pictures</legend>
+  <legend><%= :pictures.l.capitalize %></legend>
 
   <%= render 'embedded_pictures/index' %>
   
-  <%= link_to "add (new)", new_page_picture_path(@page) %>
+  <%= link_to :add_new.l, new_page_picture_path(@page) %>
   
   <fieldset>
     <legend>
-      <%= link_to_remote "add (in stock)",
+      <%= link_to_remote :add_in_stock.l,
           :url => new_page_embedded_picture_path(@page),
           :method => :get,
           :update => "embeddable_pictures_box" %>
@@ -46,15 +46,15 @@
 </fieldset>
 
 <fieldset>
-  <legend>Documents</legend>
+  <legend><%= :documents.l.capitalize %></legend>
 
   <%= render 'embedded_documents/index' %>
   
-  <%= link_to "add (new)", new_page_document_path(@page) %>
+  <%= link_to :add_new.l, new_page_document_path(@page) %>
   
   <fieldset>
     <legend>
-      <%= link_to_remote "add (in stock)",
+      <%= link_to_remote :add_in_stock.l,
           :url => new_page_embedded_document_path(@page),
           :method => :get,
           :update => "embeddable_documents_box" %>

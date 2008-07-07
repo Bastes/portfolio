@@ -10,3 +10,7 @@ SCALED_FORMAT = ['200x>', :png]
 
 # link banner's format geometry
 BANNER_GEOMETRY = ['400x>', :png]
+
+# sets french as default language
+Globalite.language = :fr
+

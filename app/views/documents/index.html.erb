@@ -1,18 +1,18 @@
-<% title 'Documents' -%>
+<% title :documents.l.capitalize -%>
 
 <ul id="documents">
 <% @documents.each do |document| %>
   <li id="document_<%= document.id %>">
     <%= link_to_document document %>
     <% admin_area do -%>
-      <%= link_to 'edit', edit_document_path(document) %>
-      <%= link_to 'delete',
+      <%= link_to :edit.l, edit_document_path(document) %>
+      <%= link_to :delete.l,
                   document_path(document),
-                  :confirm => 'Are you sure ?',
+                  :confirm => :are_you_sure?.l.capitalize,
                   :method => :delete %>
     <% end -%>
   </li>
 <% end %>
 </ul>
 
-<%= link_to 'new', new_document_path %>
+<%= link_to :new_something.l_with_args(:document.l).capitalize, new_document_path %>

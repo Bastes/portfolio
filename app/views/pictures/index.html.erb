@@ -1,19 +1,19 @@
-<% title 'Pictures' -%>
+<% title :pictures.l.capitalize -%>
 
 <ul id="pictures">
 <% @pictures.each do |picture| -%>
   <li id="picture_<%= picture.id %>">
     <%= link_to_picture(picture, :thumb) %>
     <% admin_area do -%>
-      <%= link_to 'edit', edit_picture_path(picture) %>
-      <%= link_to 'delete',
+      <%= link_to :edit.l, edit_picture_path(picture) %>
+      <%= link_to :delete.l,
                   picture_path(picture),
-                  :confirm => 'Are you sure ?',
+                  :confirm => :are_you_sure?.l.capitalize,
                   :method => :delete %>
     <% end -%>
   </li>
 <% end -%>
 </ul>
 
-<%= link_to "new", new_picture_path %>
+<%= link_to :new_something.l_with_args(:something => :picture.l).capitalize, new_picture_path %>
 

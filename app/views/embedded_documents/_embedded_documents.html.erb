@@ -3,7 +3,7 @@
   <li id="embedded_document_<%= embedded_document.id %>">
     <%= link_to_document embedded_document.document %>
     <% admin_area do -%>
-    <%= link_to_remote "remove", :url => embedded_document_path(embedded_document), :method => :delete %>
+    <%= link_to_remote :remove.l, :url => embedded_document_path(embedded_document), :method => :delete %>
     <% end -%>
   </li>
 <% end -%>

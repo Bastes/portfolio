@@ -3,19 +3,19 @@
 <h2><%= @page.subtitle %></h2>
 
 <% admin_area do -%>
-<%= link_to 'edit', edit_page_path(@page) %>
-<%= link_to 'delete', @page, :confirm => "Are you sure ?", :method => :delete %>
+<%= link_to :edit.l, edit_page_path(@page) %>
+<%= link_to :delete.l, @page, :confirm => :are_you_sure?.l.capitalize, :method => :delete %>
 <% end -%>
 
 <pre><%= @page.description %></pre>
 
 <fieldset>
-  <legend>Pictures</legend>
+  <legend><%= :pictures.l.capitalize %></legend>
   <%= render 'embedded_pictures/index' %>
 </fieldset>
 
 <fieldset>
-  <legend>Documents</legend>
+  <legend><%= :documents.l.capitalize %></legend>
   <%= render 'embedded_documents/index' %>
 </fieldset>
 

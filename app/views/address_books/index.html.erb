@@ -1,4 +1,4 @@
-<% title 'Addresses' -%>
+<% title :addresses.l.capitalize -%>
 
 <ul id="address_books">
 <% @address_books.each do |address_book| -%>
@@ -8,8 +8,8 @@
         <%=h address_book.label %>
         
         <% admin_area do %>
-        <%= link_to "edit", edit_address_book_path(address_book) %>
-        <%= link_to "delete", address_book_path(address_book), :confirm => "Are you sure ?", :method => :delete %>
+        <%= link_to :edit.l, edit_address_book_path(address_book) %>
+        <%= link_to :delete.l, address_book_path(address_book), :confirm => :are_you_sur?.l, :method => :delete %>
         <% end -%>
       </legend>
       
@@ -21,7 +21,7 @@
       
       <% admin_area do -%>
       <%= sortable_element("address_book_addresses_#{address_book.id}", :url => {:controller => :addresses, :action => :update_ranks, :address_book_id => address_book.id}) %>
-      <%= link_to 'new', new_address_book_address_path(address_book) %>
+      <%= link_to :new_something.l_with_args(:something => :address.l), new_address_book_address_path(address_book) %>
       <% end -%>
       
     </fieldset>
@@ -31,5 +31,5 @@
 
 <% admin_area do -%>
 <%= sortable_element('address_books', :url => {:controller => :address_books, :action => :update_ranks}) %>
-<%= link_to "new", new_address_book_path %>
+<%= link_to :new_something.l_with_args(:something => :address_books.l), new_address_book_path %>
 <% end -%>

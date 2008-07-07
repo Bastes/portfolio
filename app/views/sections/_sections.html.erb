@@ -7,7 +7,7 @@
 </ul>
 
 <% admin_area do -%>
-<%= sortable_element('sections', :url => {:controller => :sections, :action => :update_ranks}) %>
-<%= link_to 'new', new_section_path %>
+<%= sortable_element(:sections.l.capitalize, :url => {:controller => :sections, :action => :update_ranks}) %>
+<%= link_to :new_something.l_with_args(:something => :section.l), new_section_path %>
 <% end -%>
 

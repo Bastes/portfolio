@@ -1,0 +1,60 @@
+locale_name: Français
+
+################################################################################
+# titles
+admin: administrateur
+administration: administration
+current_thumbnail: onglet actuel
+default_title: titre par défaut
+last_creations: dernières créations
+log_in: connexion
+log_out: déconnexion
+logged_in_as_someone: connecté ({someone})
+portfolio: portfolio
+recrop: redécouper
+thumb: onglet
+visitor: visiteur
+
+################################################################################
+# standard controls
+add: ajouter
+add_new: ajouter (nouveau)
+add_in_stock: ajouter (en stock)
+are_you_sure?: êtes-vous sûr ?
+back: retour
+create: créer
+delete: supprimer
+edit: modifier
+edit_something: éditer {something}
+new_something: créer {something}
+recrop_here?: recadrer à cet endroit ?
+remove: retirer
+show: afficher
+update: enregistrer
+
+################################################################################
+# field names
+attachment: fichier
+banner: bannière
+description: description
+label: libellé
+password: mot de passe
+subtitle: sous-titre
+title: titre
+url: url
+
+################################################################################
+# Tables
+address: adresse
+addresses: adresses
+address_book: carnet d'adresses
+address_books: carnets d'adresses
+document: document
+documents: documents
+page: page
+pages: pages
+picture: image
+pictures: images
+section: section
+sections: sections
+

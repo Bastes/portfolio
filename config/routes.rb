@@ -7,12 +7,14 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :embedded_pictures
   map.resources :embedded_documents
   map.resources :pages do |pages|
-    pages.resources :pictures, :name_prefix => "page_"
-    pages.resources :documents, :name_prefix => "page_"
-    pages.resources :embedded_pictures, :name_prefix => "page_"
     pages.resources :embedded_documents, :name_prefix => "page_"
+    pages.resources :embedded_pictures, :name_prefix => "page_"
+    pages.resources :documents, :name_prefix => "page_"
+    pages.resources :pictures, :name_prefix => "page_"
   end
-  map.resources :pictures
+  map.resources :pictures do |pictures|
+    pictures.resources :thumbnails, :name_prefix => "picture_"
+  end
   map.resources :sections do |sections|
     sections.resources :pages, :name_prefix => "section_"
   end

@@ -1,16 +1,16 @@
-<% title 'Edit address book' -%>
+<% title :edit_something.l_with_args({:something => :address_book.l}) -%>
 
-<%= link_to "back", address_books_path %>
-<%= link_to "delete", address_book_path(@address_book), :confirm => "Are you sure ?", :method => :delete %>
+<%= link_to :back.l, address_books_path %>
+<%= link_to :delete.l, address_book_path(@address_book), :confirm => :are_you_sure?.l, :method => :delete %>
 
 <% form_for ( @address_book ) do |f| -%>
-  <%= f.label :label %>
+  <%= f.label :label, :label.l.capitalize %>
   <%= f.text_field :label %>
-  <%= error_message_on @address_book, "label" %>
+  <%= error_message_on @address_book, :label %>
   
-  <%= f.label :description %>
+  <%= f.label :description, :description.l.capitalize %>
   <%= f.text_area :description %>
   
-  <%= submit_tag "Update" %>
+  <%= submit_tag :update.l.capitalize %>
 <% end -%>
 

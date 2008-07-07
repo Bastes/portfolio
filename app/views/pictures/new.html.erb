@@ -1,14 +1,13 @@
-<% title 'New picture' -%>
+<% title :new_something.l_with_args(:something => :picture.l).capitalize -%>
 
-<%= link_to "back", (params[:page_id] ? edit_page_path(params[:page_id]) : pictures_path) %>
+<%= link_to :back.l, (params[:page_id] ? edit_page_path(params[:page_id]) : pictures_path) %>
 
 <% form_for(@picture, :html => { :multipart => true }) do |f| %>
-  <%= f.error_messages %>
 
-  <label for="picture_attachment">File</label>
+  <%= f.label :attachment, :attachment.l.capitalize %>
   <%= f.file_field :attachment %>
   <%= error_message_on @picture, :attachment %>
   
-  <%= f.submit "Create" %>
+  <%= f.submit :create.l.capitalize %>
 <% end %>
 

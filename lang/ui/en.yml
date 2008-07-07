@@ -1,0 +1,60 @@
+locale_name: English
+
+################################################################################
+# standard titles
+admin: administrator
+administration: administration
+current_thumbnail: current thumbnail
+default_title: default title
+last_creations: Last creations
+log_in: log in
+log_out: log out
+logged_in_as_someone: logged in as {someone}
+portfolio: portfolio
+recrop: recrop
+thumb: thumbnail
+visitor: visitor
+
+################################################################################
+# standard controls
+add: ajouter
+add_new: add (new)
+add_in_stock: add (in stock)
+are_you_sure?: are you sure ?
+back: back
+create: create
+delete: delete
+edit: edit
+edit_something: edit {something}
+new_something: new {something}
+recrop_here?: recrop here ?
+remove: retirer
+show: show
+update: update
+
+################################################################################
+# field names
+attachment: attachment
+banner: banner
+description: description
+label: label
+password: password
+subtitle: subtitle
+title: title
+url: url
+
+################################################################################
+# Tables
+address: address
+addresses: addresses
+address_book: address book
+address_books: address books
+document: document
+documents: documents
+page: page
+pages: pages
+picture: picture
+pictures: pictures
+section: section
+sections: sections
+

@@ -1,14 +1,14 @@
 <% title @section.title %>
 
 <% admin_area do -%>
-<%= link_to 'edit', edit_section_path(@section) %>
-<%= link_to 'delete', @section, :confirm => 'Are you sure ?', :method => :delete %>
+<%= link_to :edit.l, edit_section_path(@section) %>
+<%= link_to :delete.l, @section, :confirm => :are_you_sure?.l.capitalize, :method => :delete %>
 <% end -%>
 
 <pre><%= @section.description %></pre>
 
 <fieldset>
-  <legend>Pages</legend>
+  <legend><%= :pages.l.capitalize %></legend>
   
   <div id="pages_box">
     <%= render_partial 'pages/pages', @section.pages %>
@@ -16,7 +16,7 @@
     <% admin_area do -%>
     <%= sortable_element('pages', :url => {:controller => :pages, :action => :update_ranks, :section_id => @section.id}) %>
     
-    <%= link_to "new page", new_section_page_path(@section) %>
+    <%= link_to :new_something.l_with_args(:something => :page), new_section_page_path(@section) %>
     <% end -%>
   </div>
 </fieldset>

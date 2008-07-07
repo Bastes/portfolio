@@ -1,23 +1,23 @@
-#resize_scaled_image {
+#resize_scaled {
   margin: 0px;
   margin-bottom: 20px;
 }
 
-#resize_scaled_image,
-#resize_full_image {
+#resize_scaled,
+#resize_original {
   position: relative;
   top: 0px;
   left: 50%;
   border: solid 2px #777;
 }
 
-#resize_scaled_image div,
-#resize_full_image div {
+#resize_scaled div,
+#resize_original div {
   position: absolute;
 }
 
-#resize_scaled_image div.border,
-#resize_full_image div.border {
+#resize_scaled div.border,
+#resize_original div.border {
   width: 100%;
   height: 100%;
   left: -1px;

@@ -1,16 +1,15 @@
-<% title 'Editing picture' -%>
+<% title :edit_something.l_with_args(:something => :picture).capitalize -%>
 
-<%= link_to 'back', pictures_path %><br />
+<%= link_to :back.l, pictures_path %><br />
 
 <%= link_to_picture(@picture) %>
 
 <% form_for(@picture, :html => { :multipart => true }) do |f| %>
-  <%= f.error_messages %>
 
-  <label for="picture_attachment">File</label>
+  <%= f.label :attachment, :attachment.l.capitalize %>
   <%= f.file_field :attachment %>
   <%= error_message_on @picture, :attachment %>
   
-  <%= f.submit "Update" %>
+  <%= f.submit :update.l.capitalize %>
 <% end %>
 

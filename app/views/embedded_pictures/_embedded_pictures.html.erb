@@ -3,7 +3,7 @@
   <li id="embedded_picture_<%= embedded_picture.id %>">
     <%= link_to_picture embedded_picture.picture %>
     <% admin_area do -%>
-    <%= link_to_remote "remove", :url => embedded_picture_path(embedded_picture), :method => :delete %>
+    <%= link_to_remote :remove.l, :url => embedded_picture_path(embedded_picture), :method => :delete %>
     <% end -%>
   </li>
 <% end -%>

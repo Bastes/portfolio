@@ -1,17 +1,16 @@
-<% title 'Editing section' -%>
+<% title :edit_something.l_with_args(:something => :section.l).capitalize -%>
 
-<%= link_to 'show', @section %> |
-<%= link_to 'delete', @section, :confirm => 'Are you sure ?', :method => :delete %>
+<%= link_to :show.l, @section %> |
+<%= link_to :delete.l, @section, :confirm => :are_you_sure?.l.capitalize, :method => :delete %>
 
 <% form_for(@section) do |f| %>
-  <%= f.error_messages %>
-
-  <%= f.label :title %>
+  <%= f.label :title, :title.l.capitalize %>
   <%= f.text_field :title %>
+  <%= f.error_message_on :title %>
   
-  <%= f.label :description %>
+  <%= f.label :description, :description.l.capitalize %>
   <%= f.text_area :description %>
   
-  <%= f.submit "Update" %>
+  <%= f.submit :update.l.capitalize %>
 <% end %>
 

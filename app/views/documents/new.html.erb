@@ -1,16 +1,14 @@
-<% title 'New document' -%>
+<% title :new_something.l_with_args(:document.l).capitalize -%>
 
-<%= link_to "back", (params[:page_id] ? edit_page_path(params[:page_id]) : documents_path) %>
+<%= link_to :back.l, (params[:page_id] ? edit_page_path(params[:page_id]) : documents_path) %>
 
 <% form_for(@document, :html => { :multipart => true }) do |f| %>
   <%= hidden_field_tag :page_id, params[:page_id] if params[:page_id] %>
   
-  <%= f.error_messages %>
-  
-  <label for="document_attachment">File</label>
+  <%= f.label :attachment, :attachment.l.capitalize %>
   <%= f.file_field :attachment %>
   <%= error_message_on @document, :attachment %>
   
-  <%= f.submit "Create" %>
+  <%= f.submit :create.l.capitalize %>
 <% end %>
 
