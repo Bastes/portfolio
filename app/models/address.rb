@@ -5,8 +5,8 @@ class Address < ActiveRecord::Base
   # attached banner (optional, relies on paperclip)
   has_attached_file :banner,
       :styles => { :original => BANNER_GEOMETRY },
-      :url => '/images/banner/:id_:basename.:extension',
-      :path => ':rails_root/public/images/banner/:id_:basename.:extension'
+      :url => '/images/banners/:id_:basename.:extension',
+      :path => ':rails_root/public/images/banners/:id_:basename.:extension'
 
   
   # validations
