@@ -1,4 +1,4 @@
-<% title :new_something.l_with_args(:document.l).capitalize -%>
+<% title :new_something.l_with_args(:something => :document.l).capitalize -%>
 
 <%= link_to :back.l, (params[:page_id] ? edit_page_path(params[:page_id]) : documents_path) %>
 
