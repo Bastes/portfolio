@@ -16,7 +16,7 @@ class Page < ActiveRecord::Base
   
   # page's thumbnail's url
   def thumb_url
-    embedded_pictures.first ? embedded_pictures.first.picture : nil
+    embedded_pictures.first ? embedded_pictures.first.picture.attachment.url(:thumb) : nil
   end
   
   # updates embedded pictures's ranks
