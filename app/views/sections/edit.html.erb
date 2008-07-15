@@ -1,6 +1,6 @@
 <% title :edit_something.l_with_args(:something => :section.l).capitalize -%>
 
-<%= link_to :show.l, @section %> |
+<%= link_to :show.l, @section %>
 <%= link_to :delete.l, @section, :confirm => :are_you_sure?.l.capitalize, :method => :delete %>
 
 <% form_for(@section) do |f| %>

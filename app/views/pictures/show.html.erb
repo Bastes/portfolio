@@ -1,6 +1,6 @@
 <%= image_tag @picture.attachment.url :thumb %><br />
 <%= link_to_picture(@picture) %>
 
-<%= link_to :edit.l, edit_picture_path(@picture) %> |
-<%= link_to :edit_something.l_with_args(:thumb.l), new_picture_thumbnail_path(@picture) %> |
+<%= link_to :edit.l, edit_picture_path(@picture) %>
+<%= link_to :edit_something.l_with_args(:thumb.l), new_picture_thumbnail_path(@picture) %>
 <%= link_to :back.l, pictures_path %>
