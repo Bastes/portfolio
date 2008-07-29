@@ -33,6 +33,26 @@ show: show
 update: update
 
 ################################################################################
+# Tables
+address: address
+addresses: addresses
+
+address_book: address book
+address_books: address books
+
+document: document
+documents: documents
+
+page: page
+pages: pages
+
+picture: picture
+pictures: pictures
+
+section: section
+sections: sections
+
+################################################################################
 # field names
 attachment: attachment
 banner: banner
@@ -44,17 +64,45 @@ title: title
 url: url
 
 ################################################################################
-# Tables
-address: address
-addresses: addresses
-address_book: address book
-address_books: address books
-document: document
-documents: documents
-page: page
-pages: pages
-picture: picture
-pictures: pictures
-section: section
-sections: sections
+# Flash messages
+address_book_created: The address book was successfully created.
+address_book_updated: The address book was successfully updated.
+address_book_deleted: The address book was destroyed.
+address_books_reordered: The address books were successfully reordered.
+
+address_created: The link was successfully created.
+address_updated: The link was successfully updated.
+address_deleted: The link was destroyed.
+addresses_reordered: The links were reordered.
+
+document_created: The document was successfully created.
+document_updated: The document was successfully updated.
+document_deleted: The document was destroyed.
+
+embedded_document_created: The document was embedded to the page.
+embedded_document_deleted: The document was removed from the page.
+embedded_documents_reordered: The embedded documents were reordered.
+
+embedded_picture_created: The picture was embedded to the page.
+embedded_picture_deleted: The picture was removed from the page.
+embedded_pictures_reordered: The embedded pictures were reordered.
+
+page_created: The page was successfully created.
+page_updated: The page was successfully updated.
+page_deleted: The page was destroyed.
+pages_reordered: The pages were reordered.
+
+picture_created: The picture was successfully created.
+picture_updated: The picture was successfully updated.
+picture_deleted: The picture was destroyed.
+
+section_created: The section was successfully created.
+section_updated: The section was successfully updated.
+section_deleted: The section was destroyed.
+sections_reordered: The sections were reordered.
+
+session_created: Logged in.
+session_deleted: Logged out.
+
+thumbnail_created: The thumbnail was recroped.
 

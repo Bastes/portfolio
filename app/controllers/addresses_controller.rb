@@ -24,7 +24,7 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        flash[:notice] = 'Address was successfully created.'
+        flash[:notice] = :address_created.l
         format.html { redirect_to(address_books_path) }
         format.xml  { render :xml => @address, :status => :created, :location => @address }
       else
@@ -41,7 +41,7 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.update_attributes(params[:address])
-        flash[:notice] = 'Address was successfully updated.'
+        flash[:notice] = :address_created.l
         format.html { redirect_to(address_books_path) }
         format.xml  { head :ok }
       else
@@ -56,6 +56,7 @@ class AddressesController < ApplicationController
   def destroy
     @address = Address.find(params[:id])
     @address.destroy
+    flash[:notice] = :address_deleted.l
     
     respond_to do |format|
       format.html { redirect_to(addresses_url) }
@@ -74,7 +75,7 @@ class AddressesController < ApplicationController
       address.save
     end
     
-    flash[:notice] = 'Addresses successfully reordered.'
+    flash[:notice] = :addresses_reordered.l
     respond_to do |format|
       format.html { redirect_to(address_books_url) }
       format.xml  { head :ok }

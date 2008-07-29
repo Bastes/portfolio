@@ -1,11 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  title: MyString
-  subtitle: MyString
-  description: MyText
+<% page_id = 0 %>
+<% (1..4).each do |section_number| %>
+<% (1..((section_number % 3 + 1) * 2)).each do |page_number| %>
+page_<%= section_number %>_<%= page_number %>:
+  id: <%= page_id += 1 %>
+  title: Page <%= page_number %>
+  subtitle: section <%= section_number %> page <%= page_number %>
+  description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec id diam eget tellus gravida fermentum. Praesent dui leo, ultrices sed, consectetuer non, iaculis blandit, purus. Duis at elit quis dolor fringilla faucibus. Fusce a justo. Duis consequat luctus felis. Proin tortor mi, mattis non, faucibus vel, pretium eu, nulla. Ut mi massa, pharetra vitae, elementum id, adipiscing sit amet, lacus. Suspendisse potenti. Maecenas lectus. Morbi purus purus, tempor et, dignissim sagittis, volutpat eget, justo. Suspendisse mattis enim a quam. 
+  rank: <%= page_number %>
+  section_id: <%= section_number %>
+<% end %>
+<% end %>
 
-two:
-  title: MyString
-  subtitle: MyString
-  description: MyText

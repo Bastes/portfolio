@@ -49,7 +49,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        flash[:notice] = 'Page was successfully created.'
+        flash[:notice] = :page_created.l
         format.html { redirect_to(@page.section) }
         format.xml  { render :xml => @page, :status => :created, :location => @page }
       else
@@ -66,7 +66,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.update_attributes(params[:page])
-        flash[:notice] = 'Page was successfully updated.'
+        flash[:notice] = :page_updated.l
         format.html { redirect_to(@page) }
         format.xml  { head :ok }
       else
@@ -81,6 +81,7 @@ class PagesController < ApplicationController
   def destroy
     @page = Page.find(params[:id])
     @page.destroy
+    flash[:notice] = :page_destroyed.l
 
     respond_to do |format|
       format.html { redirect_to(pages_url) }
@@ -98,7 +99,7 @@ class PagesController < ApplicationController
       page.save
     end
     
-    flash[:notice] = 'Pages successfully reordered.'
+    flash[:notice] = :pages_reordered.l
     respond_to do |format|
       format.html { redirect_to(@section) }
       format.xml  { head :ok }

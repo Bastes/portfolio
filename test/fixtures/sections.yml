@@ -1,11 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  title: MyString
-  description: MyText
-  rank: 1
+<% (1..4).each do |section_number| %>
+section_<%= section_number %>:
+  id: <%= section_number %>
+  title: Section <%= section_number %>
+  description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec id diam eget tellus gravida fermentum. Praesent dui leo, ultrices sed, consectetuer non, iaculis blandit, purus. Duis at elit quis dolor fringilla faucibus. Fusce a justo. Duis consequat luctus felis. Proin tortor mi, mattis non, faucibus vel, pretium eu, nulla. Ut mi massa, pharetra vitae, elementum id, adipiscing sit amet, lacus. Suspendisse potenti. Maecenas lectus. Morbi purus purus, tempor et, dignissim sagittis, volutpat eget, justo. Suspendisse mattis enim a quam. 
+  rank: <%= section_number %>
+<% end %>
 
-two:
-  title: MyString
-  description: MyText
-  rank: 1

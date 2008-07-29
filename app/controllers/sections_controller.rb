@@ -46,7 +46,7 @@ class SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.save
-        flash[:notice] = 'Section was successfully created.'
+        flash[:notice] = :section_created.l
         format.html { redirect_to(@section) }
         format.xml  { render :xml => @section, :status => :created, :location => @section }
       else
@@ -63,7 +63,7 @@ class SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.update_attributes(params[:section])
-        flash[:notice] = 'Section was successfully updated.'
+        flash[:notice] = :section_updated.l
         format.html { redirect_to(@section) }
         format.xml  { head :ok }
       else
@@ -78,6 +78,7 @@ class SectionsController < ApplicationController
   def destroy
     @section = Section.find(params[:id])
     @section.destroy
+    flash[:notice] = :section_deleted.l
 
     respond_to do |format|
       format.html { redirect_to(sections_url) }
@@ -94,7 +95,7 @@ class SectionsController < ApplicationController
       section.save
     end
     
-    flash[:notice] = 'Sections successfully reordered.'
+    flash[:notice] = :sections_reordered.l
     respond_to do |format|
       format.html { redirect_to(sections_url) }
       format.xml  { head :ok }

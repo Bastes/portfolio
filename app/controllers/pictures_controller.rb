@@ -35,12 +35,22 @@ class PicturesController < ApplicationController
 
   # POST /pictures
   def create
-    @picture = Picture.new(params[:picture])
+    @Picture = Picture.new(params[:Picture])
 
     respond_to do |format|
-      if @picture.save
-        flash[:notice] = 'Picture was successfully created.'
-        format.html { redirect_to(pictures_url) }
+      if @Picture.save
+        flash[:notice] = :picture_created.l
+        if params[:page_id]
+          embedded = EmbeddedPicture.new(:page_id => params[:page_id], :Picture_id => @Picture.id)
+          if embedded.save
+            flash[:notice] += :embedded_picture_created.l
+            format.html { redirect_to edit_page_path(params[:page_id]) }
+          else
+            redirect_to (page_path(params[:page_id]))
+          end
+        else
+          format.html { redirect_to( Pictures_url ) }
+        end
       else
         format.html { render :action => "new" }
       end
@@ -53,7 +63,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.update_attributes(params[:picture])
-        flash[:notice] = 'Picture was successfully updated.'
+        flash[:notice] = :picture_updated.l
         format.html { redirect_to(pictures_url) }
       else
         format.html { render :action => "edit" }
@@ -65,6 +75,7 @@ class PicturesController < ApplicationController
   def destroy
     @picture = Picture.find(params[:id])
     @picture.destroy
+    flash[:notice] = :picture_deleted.l
 
     respond_to do |format|
       format.html { redirect_to(pictures_url) }

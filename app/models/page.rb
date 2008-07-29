@@ -4,8 +4,14 @@ class Page < ActiveRecord::Base
   named_scope :ordered, :order => 'rank ASC'
   
   # links to embedded content
-  has_many :embedded_documents, :include => :document, :order => 'rank ASC', :dependent => :destroy
-  has_many :embedded_pictures, :include => :picture, :order => 'rank ASC', :dependent => :destroy
+  has_many :embedded_documents,
+           :include => :document,
+           :order => 'rank ASC',
+           :dependent => :destroy
+  has_many :embedded_pictures,
+           :include => :picture,
+           :order => 'rank ASC',
+           :dependent => :destroy
   
   # link to section
   belongs_to :section
@@ -16,7 +22,9 @@ class Page < ActiveRecord::Base
   
   # page's thumbnail's url
   def thumb_url
-    embedded_pictures.first ? embedded_pictures.first.picture.attachment.url(:thumb) : nil
+    embedded_pictures.first.nil? ?
+      nil :
+      embedded_pictures.first.picture.attachment.url(:thumb)
   end
   
   # updates embedded pictures's ranks

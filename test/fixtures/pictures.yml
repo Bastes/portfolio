@@ -1,11 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  attachment_file_name: MyString
-  attachment_content_type: MyString
-  attachment_file_size: 1
+# TODO fixtures with an attached file
+#one:
+#  attachment_file_name: MyString
+#  attachment_content_type: MyString
+#  attachment_file_size: 1
 
-two:
-  attachment_file_name: MyString
-  attachment_content_type: MyString
-  attachment_file_size: 1

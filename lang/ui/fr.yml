@@ -33,6 +33,26 @@ show: afficher
 update: enregistrer
 
 ################################################################################
+# Tables
+address: lien
+addresses: liens
+
+address_book: carnet d'adresses
+address_books: carnets d'adresses
+
+document: document
+documents: documents
+
+page: page
+pages: pages
+
+picture: image
+pictures: images
+
+section: section
+sections: sections
+
+################################################################################
 # field names
 attachment: fichier
 banner: bannière
@@ -44,17 +64,45 @@ title: titre
 url: url
 
 ################################################################################
-# Tables
-address: adresse
-addresses: adresses
-address_book: carnet d'adresses
-address_books: carnets d'adresses
-document: document
-documents: documents
-page: page
-pages: pages
-picture: image
-pictures: images
-section: section
-sections: sections
+# Flash messages
+address_book_created: Le nouveau carnet d'adresse est créé.
+address_book_updated: Le carnet d'adresse est mis à jour.
+address_book_deleted: Le carnet d'adresse est supprimé.
+address_books_reordered: Les carnets d'adresse sont réordonnés.
+
+address_created: Le lien est créé.
+address_updated: Le lien est mis à jour.
+address_deleted: Le lien est supprimé.
+addresses_reordered: Les liens sont réordonnés.
+
+document_created: Le document est créé.
+document_updated: Le document est mis à jour.
+document_deleted: Le document est supprimé.
+
+embedded_document_created: Le document est inclus dans la page.
+embedded_document_deleted: Le document est retiré de la page.
+embedded_documents_reordered: Les documents de la page sont réordonnés.
+
+embedded_picture_created: L'image est incluse dans la page.
+embedded_picture_deleted: L'image est retirée de la page.
+embedded_pictures_reordered: Les images de la page sont réordonnées.
+
+page_created: La page est créée.
+page_updated: La page est mise à jour.
+page_deleted: La page est supprimée.
+pages_reordered: Les pages sont réordonnées.
+
+picture_created: L'image est créée.
+picture_updated: L'image est mise à jour.
+picture_deleted: L'image est supprimée.
+
+section_created: La section est créée.
+section_updated: La section est mise à jour.
+section_deleted: La section est supprimée.
+section_reordered: Les sections sont réordonnées.
+
+session_created: Vous êtes connecté.
+session_deleted: Vous avez été déconnecté.
+
+thumbnail_created: L'onglet est recadré.
 

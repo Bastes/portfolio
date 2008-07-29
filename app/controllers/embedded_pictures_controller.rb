@@ -33,6 +33,7 @@ class EmbeddedPicturesController < ApplicationController
     
     respond_to do |format|
       if @embedded_picture.save
+        flash[:notice] = :embedded_picture_created.l
         format.js
         format.html { render :action => :index }
         format.xml  { render :xml => @embedded_picture, :status => :created, :location => @embedded_picture }
@@ -49,6 +50,7 @@ class EmbeddedPicturesController < ApplicationController
   def destroy
     @embedded_picture = EmbeddedPicture.find(params[:id])
     @embedded_picture.destroy
+    flash[:notice] = :embedded_picture_deleted.l
 
     respond_to do |format|
       format.js
@@ -63,7 +65,7 @@ class EmbeddedPicturesController < ApplicationController
     @page = Page.find params[:page_id]
     @page.update_embedded_pictures_ranks params[:embedded_pictures]
     
-    flash[:notice] = 'Pictures successfully reordered.'
+    flash[:notice] = :embedded_pictures_reordered.l
     respond_to do |format|
       format.html { redirect_to(@page) }
       format.xml  { head :ok }

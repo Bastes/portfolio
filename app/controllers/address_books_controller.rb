@@ -35,7 +35,7 @@ class AddressBooksController < ApplicationController
 
     respond_to do |format|
       if @address_book.save
-        flash[:notice] = 'AddressBook was successfully created.'
+        flash[:notice] = :address_book_created.l
         format.html { redirect_to(address_books_url) }
         format.xml  { render :xml => @address_book, :status => :created, :location => @address_book }
       else
@@ -52,7 +52,7 @@ class AddressBooksController < ApplicationController
 
     respond_to do |format|
       if @address_book.update_attributes(params[:address_book])
-        flash[:notice] = 'AddressBook was successfully updated.'
+        flash[:notice] = :address_book_updated.l
         format.html { redirect_to(address_books_url) }
         format.xml  { head :ok }
       else
@@ -68,6 +68,7 @@ class AddressBooksController < ApplicationController
   def destroy
     @address_book = AddressBook.find(params[:id])
     @address_book.destroy
+    flash[:notice] = :address_book_deleted.l
 
     respond_to do |format|
       format.html { redirect_to(address_books_url) }
@@ -84,7 +85,7 @@ class AddressBooksController < ApplicationController
       address_book.save
     end
     
-    flash[:notice] = 'Address books successfully reordered.'
+    flash[:notice] = :address_books_reordered.l
     respond_to do |format|
       format.html { redirect_to(address_books_url) }
       format.xml  { head :ok }

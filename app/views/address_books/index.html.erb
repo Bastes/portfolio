@@ -13,7 +13,7 @@
         <% end -%>
       </legend>
       
-      <pre><%=h address_book.description %></pre>
+      <div><%=h address_book.description %></div>
       
       <ul id="address_book_addresses_<%= address_book.id %>">
         <%= render_partial 'addresses/addresses', address_book.addresses %>

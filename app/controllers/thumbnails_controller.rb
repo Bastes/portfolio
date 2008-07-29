@@ -14,7 +14,7 @@ class ThumbnailsController < ApplicationController
     
     respond_to do |format|
       if @picture.recrop_thumb(params[:left], params[:top], params[:version].to_sym)
-        flash[:notice] = 'Thumbnail was successfully cropped.'
+        flash[:notice] = :thumbnail_created.l
         format.html { redirect_to(@picture) }
       else
         format.html { render :action => "new" }

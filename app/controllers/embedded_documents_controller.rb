@@ -33,6 +33,7 @@ class EmbeddedDocumentsController < ApplicationController
     
     respond_to do |format|
       if @embedded_document.save
+        flash[:notice] = :embedded_document_created.l
         format.js
         format.html { render :action => :index }
         format.xml  { render :xml => @embedded_document, :status => :created, :location => @embedded_document }
@@ -49,6 +50,7 @@ class EmbeddedDocumentsController < ApplicationController
   def destroy
     @embedded_document = EmbeddedDocument.find(params[:id])
     @embedded_document.destroy
+    flash[:notice] = :embedded_document_deleted.l
 
     respond_to do |format|
       format.js
@@ -63,7 +65,7 @@ class EmbeddedDocumentsController < ApplicationController
     @page = Page.find params[:page_id]
     @page.update_embedded_documents_ranks params[:embedded_documents]
     
-    flash[:notice] = 'Documents successfully reordered.'
+    flash[:notice] = :embedded_documents_reordered.l
     respond_to do |format|
       format.html { redirect_to(@page) }
       format.xml  { head :ok }

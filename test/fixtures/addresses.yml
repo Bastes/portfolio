@@ -1,13 +1,12 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  address_book_id: 1
-  url: MyString
-  title: MyString
-  rank: 1
+# TODO fixtures with an attached file
+#one:
+#  address_book_id: 1
+#  url: MyString
+#  title: MyString
+#  rank: 1
+#  banner_file_name: MyString
+#  banner_content_type: MyString
+#  banner_file_size: 1
 
-two:
-  address_book_id: 1
-  url: MyString
-  title: MyString
-  rank: 1

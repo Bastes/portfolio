@@ -39,11 +39,11 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.save
-        flash[:notice] = 'Document was successfully created.'
+        flash[:notice] = :document_created.l
         if params[:page_id]
           embedded = EmbeddedDocument.new(:page_id => params[:page_id], :document_id => @document.id)
           if embedded.save
-            flash[:notice] += "\nDocument was successfully embedded in page."
+            flash[:notice] += :embedded_document_created.l
             format.html { redirect_to edit_page_path(params[:page_id]) }
           else
             redirect_to (page_path(params[:page_id]))
@@ -63,7 +63,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.update_attributes(params[:document])
-        flash[:notice] = 'Document was successfully updated.'
+        flash[:notice] = :document_updated.l
         format.html { redirect_to( documents_url ) }
       else
         format.html { render :action => "edit" }
@@ -75,6 +75,7 @@ class DocumentsController < ApplicationController
   def destroy
     @document = Document.find(params[:id])
     @document.destroy
+    flash[:notice] = :document_deleted.l
 
     respond_to do |format|
       format.html { redirect_to(documents_url) }

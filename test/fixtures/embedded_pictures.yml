@@ -1,11 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  page_id: 1
-  page_id: 1
-  rank: 1
+# TODO fixtures
+#one:
+#  page_id: 1
+#  picture_id: 1
+#  rank: 1
 
-two:
-  page_id: 1
-  page_id: 1
-  rank: 1
