@@ -35,13 +35,13 @@ class PicturesController < ApplicationController
 
   # POST /pictures
   def create
-    @Picture = Picture.new(params[:Picture])
+    @picture = Picture.new(params[:picture])
 
     respond_to do |format|
-      if @Picture.save
+      if @picture.save
         flash[:notice] = :picture_created.l
         if params[:page_id]
-          embedded = EmbeddedPicture.new(:page_id => params[:page_id], :Picture_id => @Picture.id)
+          embedded = EmbeddedPicture.new(:page_id => params[:page_id], :picture_id => @picture.id)
           if embedded.save
             flash[:notice] += :embedded_picture_created.l
             format.html { redirect_to edit_page_path(params[:page_id]) }
@@ -49,7 +49,7 @@ class PicturesController < ApplicationController
             redirect_to (page_path(params[:page_id]))
           end
         else
-          format.html { redirect_to( Pictures_url ) }
+          format.html { redirect_to( pictures_url ) }
         end
       else
         format.html { render :action => "new" }
