@@ -3,6 +3,7 @@
 <%= link_to :back.l, (params[:page_id] ? edit_page_path(params[:page_id]) : pictures_path) %>
 
 <% form_for(@picture, :html => { :multipart => true }) do |f| %>
+  <%= hidden_field_tag :page_id, params[:page_id] if params[:page_id] %>
 
   <%= f.label :attachment, :attachment.l.capitalize %>
   <%= f.file_field :attachment %>
