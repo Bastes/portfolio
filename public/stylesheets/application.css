@@ -8,11 +8,17 @@ a {
 
 #whole_page {
   position: absolute;
+  
   top: 30px;
   left: 50%;
-  margin-left: -312px;
-  width: 600px;
+  
+  width: 800px;
+  min-height: 600px;
+  
   padding: 10px;
+  
+  margin-left: -412px;
+  
   border: solid 2px #777;
 }
 

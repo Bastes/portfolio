@@ -1,25 +1,36 @@
 <% title @section.title %>
 
-<% admin_area do -%>
-<%= link_to :edit.l, edit_section_path(@section) %>
-<%= link_to :delete.l, @section, :confirm => :are_you_sure?.l.capitalize, :method => :delete %>
-<% end -%>
-
-<div><%= @section.description %></div>
-
 <fieldset>
-  <legend><%= :pages.l.capitalize %></legend>
-  
-  <div id="pages_box">
-    <%= render_partial 'pages/pages', @section.pages %>
-    
-    <% admin_area do -%>
-    <%= sortable_element('pages', :url => {:controller => :pages, :action => :update_ranks, :section_id => @section.id}) %>
-    
-    <%= link_to :new_something.l_with_args(:something => :page), new_section_page_path(@section) %>
-    <% end -%>
+  <legend><%=h @section.title %></legend>
+  <% stylesheets do -%>
+  <%= stylesheet_link_tag 'portfolio' %>
+  <% end -%>
+
+  <% admin_area do -%>
+  <%= link_to :edit.l, edit_section_path(@section) %>
+  <%= link_to :delete.l, @section, :confirm => :are_you_sure?.l.capitalize, :method => :delete %>
+  <% end -%>
+
+  <div><%= @section.description %></div>
+
+  <div id="pages_container">
+    <fieldset id="pages_box">
+      <legend><%= :pages.l.capitalize %></legend>
+      <div class="scrollable">
+        <%= render_partial 'pages/pages', @section.pages %>
+        
+        <% admin_area do -%>
+        <%= sortable_element('pages', :url => {:controller => :pages, :action => :update_ranks, :section_id => @section.id}) %>
+        
+        <%= link_to :new_something.l_with_args(:something => :page), new_section_page_path(@section) %>
+        <% end -%>
+      </div>
+    </fieldset>
+
+    <fieldset id="page">
+      <legend><%=h @page.title %></legend>
+      <%= render 'pages/show' if @page %>
+    </fieldset>
   </div>
 </fieldset>
-
-<%= render 'pages/show' if @page %>
 

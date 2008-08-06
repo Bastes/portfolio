@@ -9,13 +9,15 @@
 
 <div><%= @page.description %></div>
 
-<fieldset>
-  <legend><%= :pictures.l.capitalize %></legend>
-  <%= render 'embedded_pictures/index' %>
-</fieldset>
+<div style="position: relative; margin: 0px; padding: 0px; padding-left: 301px;">
+  <fieldset style="position: relative;">
+    <legend><%= :pictures.l.capitalize %></legend>
+    <%= render 'embedded_pictures/index' %>
+  </fieldset>
 
-<fieldset>
-  <legend><%= :documents.l.capitalize %></legend>
-  <%= render 'embedded_documents/index' %>
-</fieldset>
+  <fieldset style="position: absolute; left: 0px; top: 0px; width: 267px;">
+    <legend><%= :documents.l.capitalize %></legend>
+    <%= render 'embedded_documents/index' %>
+  </fieldset>
+</div>
 
